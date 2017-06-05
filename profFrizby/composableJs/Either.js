@@ -1,0 +1,1 @@
+const Either = Right || Left

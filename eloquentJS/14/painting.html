@@ -1,0 +1,29 @@
+<style>
+  body {
+    height: 200px;
+    background: beige;
+  }
+  .dot {
+    height: 8px; width: 8px;
+    border-radius: 4px;
+    background: blue;
+    position: absolute;
+  }
+</style>
+<script>
+  const draw = function(event) {
+    const dot = document.createElement("div");
+    dot.className = "dot";
+    dot.style.left = (event.pageX - 5) + "px";
+    dot.style.top = (event.pageY - 5) + "px";
+    document.body.appendChild(dot);
+  }
+
+  addEventListener("mousedown", function(event){
+    addEventListener('mousemove', draw);
+  });
+
+  addEventListener('mouseup', function(){
+    removeEventListener('mousemove', draw);
+  });
+</script>

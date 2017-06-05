@@ -1,0 +1,32 @@
+<style>
+  .trail { 
+    position: absolute;
+    height: 200px; width: 300px;
+    border-radius: 3px;
+    border: 2px solid black;
+    background: teal;
+    left: 10px;
+    top: 10px;
+  }
+  body {
+    height: 300px;
+  }
+</style>
+
+<div class=trail></div>
+
+<script>
+  const div = document.querySelector('div');
+
+  const drag = function(event) {
+    div.style.left = event.pageX + 'px';
+    div.style.top = event.pageY + 'px';
+  };
+
+  div.addEventListener('mousedown', function(event){
+    addEventListener('mousemove', drag);
+  });
+
+  addEventListener('mouseup', function(){ removeEventListener('mousemove', drag); });
+</script>
+

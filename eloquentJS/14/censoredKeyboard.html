@@ -1,0 +1,11 @@
+<input type='text'>
+<script>
+  const field = document.querySelector('input');
+  field.addEventListener('keypress', function(event) {
+    ['Q', 'X', 'W'].forEach(function(el){
+      if(el === event.key){
+        event.preventDefault();
+      }
+    });
+  });
+</script>
